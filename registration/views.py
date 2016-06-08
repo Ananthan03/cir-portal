@@ -110,7 +110,7 @@ class StudentListUpdateView(LoginRequiredMixin, UpdateView):
     success_url = '/register/cirstaff/success/'
 
     def get_object(self, queryset=None):
-        obj = Student.Objects.get(stud_id=self.kwargs['stud_id'])
+        obj = Student.Objects.get(aums_id=self.kwargs['aums_id'])
         if obj:
             return obj
         else:
