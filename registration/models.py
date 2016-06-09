@@ -85,9 +85,9 @@ BRANCH = (('CSE', _('CSE')), ('EEE', _('EEE')), ('ME', _('ME')), ('CSA', _('CSA'
 class Student(models.Model):
     aums_id = models.CharField(_('Aums ID'),  max_length=32, blank=False, unique=True,primary_key=True)
     name = models.CharField(_('First Name'), max_length=32, blank=True, null=True)
-    curr_course = models.CharField(_('Current Course'), max_length=32,choices= BRANCH ,blank=True, null=True,
+    curr_course = models.CharField(_('Current Course'), max_length=32,blank=True, null=True,
                                   validators=[RegexValidator(regex='^[A-Za-z]*$')])
-    branch = models.CharField(_('Branch'), max_length=32, blank=True, null=True,
+    branch = models.CharField(_('Branch'), max_length=32, choices= BRANCH ,blank=True, null=True,
                                   validators=[RegexValidator(regex='^[A-Za-z]*$')])
     tenth_mark = models.CharField(_('10th Mark'),max_length=5, blank=True, null=True)
     twelth_mark = models.CharField(_('12th Mark'),max_length=5, blank=True, null=True)
